@@ -143,13 +143,38 @@ public class IntegerToRomanTest {
     assertEquals("CCC", answer300);
     assertEquals("CD", answer400);
     assertEquals("D", answer500);
+
+
+    //test1000
+    //arrange
+    int test600=600;
+    int test700=700;
+    int test800=800;
+    int test900=900;
+    int test999=999;
+    int test1000=1000;
+    
+    //act
+    String answer600=IntegerToRoman.convert(test600);
+    String answer700=IntegerToRoman.convert(test700);
+    String answer800=IntegerToRoman.convert(test800);
+    String answer900=IntegerToRoman.convert(test900);
+    String answer999=IntegerToRoman.convert(test999);
+    String answer1000=IntegerToRoman.convert(test1000);
+    
+    //assert
+    assertEquals("DC", answer600);
+    assertEquals("DCC", answer700);
+    assertEquals("DCCC", answer800);
+    assertEquals("CM", answer900);
+    assertEquals("CMXCIX", answer999);
+    assertEquals("M", answer1000);
     }
   
   @Test
     public void testIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(0));
-        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(501));
+        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(1001));
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(-1));
     }
 }
-
