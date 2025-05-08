@@ -123,12 +123,32 @@ public class IntegerToRomanTest {
     assertEquals("LXXXIX", answer89);
     assertEquals("XCIV", answer94);
     assertEquals("C", answer100);
+
+
+    //test500
+    //arrange
+    int test200=200;
+    int test300=300;
+    int test400=400;
+    int test500=500;
+    
+    //act
+    String answer200=IntegerToRoman.convert(test200);
+    String answer300=IntegerToRoman.convert(test300);
+    String answer400=IntegerToRoman.convert(test400);
+    String answer500=IntegerToRoman.convert(test500);
+    
+    //assert
+    assertEquals("CC", answer200);
+    assertEquals("CCC", answer300);
+    assertEquals("CD", answer400);
+    assertEquals("D", answer500);
     }
   
   @Test
     public void testIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(0));
-        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(101));
+        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(501));
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(-1));
     }
 }
