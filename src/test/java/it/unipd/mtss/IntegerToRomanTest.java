@@ -26,12 +26,28 @@ public class IntegerToRomanTest {
     assertEquals("I", answer1);
     assertEquals("II", answer2);
     assertEquals("III", answer3);
+
+    //test6
+    //arrange
+    int test4=4;
+    int test5=5;
+    int test6=6;
+   
+    //act
+    String answer4=IntegerToRoman.convert(test4);
+    String answer5=IntegerToRoman.convert(test5);
+    String answer6=IntegerToRoman.convert(test6);
+
+    //assert
+    assertEquals("IV", answer4);
+    assertEquals("V", answer5);
+    assertEquals("VI", answer6);
     }
   
   @Test
     public void testIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(0));
-        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(4));
+        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(7));
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(-1));
     }
 }
