@@ -80,12 +80,32 @@ public class IntegerToRomanTest {
     assertEquals("XV", answer15);
     assertEquals("XIX", answer19);
     assertEquals("XX", answer20);
+
+
+    //test50
+    //arrange
+    int test39=39;
+    int test40=40;
+    int test44=44;
+    int test50=50;
+    
+    //act
+    String answer39=IntegerToRoman.convert(test39);
+    String answer40=IntegerToRoman.convert(test40);
+    String answer44=IntegerToRoman.convert(test44);
+    String answer50=IntegerToRoman.convert(test50);
+    
+    //assert
+    assertEquals("XXXIX", answer39);
+    assertEquals("XL", answer40);
+    assertEquals("XLIV", answer44);
+    assertEquals("L", answer50);
     }
   
   @Test
     public void testIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(0));
-        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(21));
+        assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(51));
         assertThrows(IllegalArgumentException.class, () -> IntegerToRoman.convert(-1));
     }
 }
